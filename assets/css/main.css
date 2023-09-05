@@ -17,6 +17,15 @@ body {
     justify-content: center;
 }
 
+#random-color,
+#guessed-color {
+    content: '';
+    width: 30rem;
+    height: 30rem;
+    border-radius: 2%;
+    border: 1px dotted lightgray;
+}
+
 /* rgb container */
 .rgb-container {
     display: flex;
