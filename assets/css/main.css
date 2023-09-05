@@ -1,3 +1,65 @@
+/* resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* set base font size to 10px = 1rem */
+html {
+    font-size: 62.5%;
+}
+
 body {
-    background: gray;
+    background: #fff;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* rgb container */
+.rgb-container {
+    display: flex;
+    align-items: space-between;
+    flex-flow: wrap row;
+    overflow: hidden;
+    height: 20vh;
+    width: 50vw;
+    background: rgba(255, 255, 255, .50);
+    border: 1px dotted lightgray;
+    border-radius: 3rem;
+    position: absolute;
+    bottom: 5rem;
+    margin: auto;
+}
+
+/* container for each color */
+.color-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* vertical align everything inside rgb container */
+label,
+span,
+.slider {
+    margin: auto 1rem;
+}
+
+/* print color from slider*/
+.print-color {
+    text-align: right;
+    width: 5rem;
+}
+
+label {
+    width: 7%;
+}
+span {
+    width: 10%;
+}
+/* set slider width*/
+input {
+    width: 83%;
 }

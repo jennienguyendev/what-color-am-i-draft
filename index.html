@@ -6,13 +6,32 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+
+    <!-- Random color -->
+    <div class="random-color"></div>
+
+    <!-- Guess -->
+    <div class="guess"></div>
+
     <!-- Slider -->
-    <div class="sliders">
-        <dl>
-            <dt>R: <span class="r-val"></span></dt><dd id="r-slider"></dd>
-            <dt>G: <span class="g-val"></span></dt><dd id="g-slider"></dd>
-            <dt>B: <span class="b-val"></span></dt><dd id="b-slider"></dd>
-        </dl>
+    <div class="rgb-container">
+        <div class="color-container">
+            <label>R: </label>
+            <input type="range" id="range-red" value="255" min="0" max="255">
+            <span class="print-color" id="print-red">255</span>
+        </div>
+
+        <div class="color-container">
+            <label>G: </label>
+            <input type="range" id="range-green" value="255" min="0" max="255">
+            <span class="print-color" id="print-green">255</span>
+        </div>
+
+        <div class="color-container">
+            <label>B: </label>
+            <input type="range" id="range-blue" value="255" min="0" max="255">
+            <span class="print-color" id="print-blue">255</span>
+        </div>
     </div>
     
     <!-- Scripts -->
