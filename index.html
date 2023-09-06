@@ -14,34 +14,37 @@
         <div id="guessed-color"></div>
     </main>
 
-    <!-- super container for result and guess-->
-    <section class="super-container">
+    <section class="color-container">
 
-        <!-- Slider -->
-        <div class="rgb-container">
-            <div class="color-container">
-                <label>R: </label>
-                <input type="range" id="range-red" value="0" min="0" max="255">
-                <span class="print-color" id="print-red">0</span>
+        <div class="random-result">
+            <div>
+                <div>
+                    <label>Hex:</label>
+                    <span id="random-hex"></span>
+                </div>
+                <div>
+                    <label>RGB:</label>
+                    <span id="random-rgb"></span>
+                </div>
             </div>
-
-            <div class="color-container">
-                <label>G: </label>
-                <input type="range" id="range-green" value="0" min="0" max="255">
-                <span class="print-color" id="print-green">0</span>
+        </div>
+        
+        <div class="rgb-sliders left">
+            <div class="red">
+                <label>R:</label>
+                <input type="range" min="0" max="255" class="range-red">
             </div>
-
-            <div class="color-container">
-                <label>B: </label>
-                <input type="range" id="range-blue" value="0" min="0" max="255">
-                <span class="print-color" id="print-blue">0</span>
+            <div class="green">
+                <label>G:</label>
+                <input type="range" min="0" max="255" class="range-green">
             </div>
-        </div> <!-- / Slider -->
-
-        <!-- hex and hsl -->
-        <div class="result-container">hsl</div>
-
-    </section> <!-- / super container -->
+            <div class="blue">
+                <label>B:</label>
+                <input type="range" min="0" max="255" class="range-blue">
+            </div>
+            <button id="submit">Confirm</button>
+        </div>
+    </section>
     
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>

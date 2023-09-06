@@ -8,82 +8,89 @@
 /* set 1rem = 10px */
 html {
     font-size: 62.5%;
-    background: black;
-    color: white;
+    width: 100vw;
+    height: 100vh;
 }
 
+/* set max width = 1000px*/
 body {
-    max-width: 1800px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-header {
-    margin: 1rem auto;
+.left {
+    text-align: left;
+}
+.center {
     text-align: center;
-    font-size: 4rem;
 }
-
+.right {
+    text-align: right;
+}
+/* flex all super containers */
 main,
-.super-container {
-    font-size: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-}
-
-
-/* set div size for color squares */
-#random-color,
-#guessed-color {
-    content: '';
-    width: 30rem;
-    height: 30rem;
-    border-radius: 1rem;
-    border: 1px solid white;
-}
-
-/* rgb container */
-.rgb-container,
-.result-container {
-    width: 50vw;
-    max-width: 63rem;
-    background: rgba(255, 255, 255, .50);
-    border: 1px solid white;
-    border-radius: 1rem;
-    padding: 1rem;
-}
-
-/* change slider color */
-#range-red {
-    accent-color: #ff0000;
-}
-#range-green {
-    accent-color: #00ff00;
-}
-#range-blue {
-    accent-color: #0000ff;
-}
-/* container for each color */
 .color-container {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: lightgray; /* delete */
 }
 
-/* vertical align everything inside rgb container */
-label,
-span,
-.slider {
-    /* margin: auto 1rem; */
+/* styles for result texts */
+
+/* set size for color squares */
+main > div {
+    content: '';
+    width: 30rem;
+    height: 30rem;
+    border: 2px solid green; /* delete */
 }
 
-/* print color from slider*/
-.print-color {
+/* set size for color value display containers*/
+.color-container > div {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 30rem;
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+.color-container > .rgb-sliders > div,
+.color-container > div input {
+    gap: .5rem;
+    width: 100%;
+}
+
+.color-container .random-result {
+    display: flex;
+}
+
+.color-container .random-result div {
+    width: 100%;
+}
+
+#random-rgb,
+#random-hex {
+    display: hidden;
+}
+
+.random-result {
     text-align: right;
 }
+.red,
+.green,
+.blue {
+    display: flex;
+    padding: 1rem;
+}
+button {
+    margin: 2rem auto;
+    padding: 1rem;
+}
 
-.result-container {
-    order: 1;
+.random-result > div > div {
+    line-height: 4.2rem;
 }
