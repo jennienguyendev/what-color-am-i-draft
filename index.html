@@ -6,33 +6,42 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <header></header>
-    <!-- Random color -->
-    <div id="random-color"></div>
+    <header>what color am i?</header>
+    <main>
+        <!-- Random color -->
+        <div id="random-color"></div>
+        <!-- Guess -->
+        <div id="guessed-color"></div>
+    </main>
 
-    <!-- Guess -->
-    <div id="guessed-color"></div>
+    <!-- super container for result and guess-->
+    <section class="super-container">
 
-    <!-- Slider -->
-    <div class="rgb-container">
-        <div class="color-container">
-            <label>R: </label>
-            <input type="range" id="range-red" value="255" min="0" max="255">
-            <span class="print-color" id="print-red">255</span>
-        </div>
+        <!-- Slider -->
+        <div class="rgb-container">
+            <div class="color-container">
+                <label>R: </label>
+                <input type="range" id="range-red" value="0" min="0" max="255">
+                <span class="print-color" id="print-red">0</span>
+            </div>
 
-        <div class="color-container">
-            <label>G: </label>
-            <input type="range" id="range-green" value="255" min="0" max="255">
-            <span class="print-color" id="print-green">255</span>
-        </div>
+            <div class="color-container">
+                <label>G: </label>
+                <input type="range" id="range-green" value="0" min="0" max="255">
+                <span class="print-color" id="print-green">0</span>
+            </div>
 
-        <div class="color-container">
-            <label>B: </label>
-            <input type="range" id="range-blue" value="255" min="0" max="255">
-            <span class="print-color" id="print-blue">255</span>
-        </div>
-    </div>
+            <div class="color-container">
+                <label>B: </label>
+                <input type="range" id="range-blue" value="0" min="0" max="255">
+                <span class="print-color" id="print-blue">0</span>
+            </div>
+        </div> <!-- / Slider -->
+
+        <!-- hex and hsl -->
+        <div class="result-container">hsl</div>
+
+    </section> <!-- / super container -->
     
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
