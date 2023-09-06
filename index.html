@@ -3,17 +3,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Color Am I?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <header class="center">what color am i?</header>
 
     <!-- display result -->
-    <section class="result-container">
-        <div id="phrase"></div>
-        <div class="value-line">
-            <label>Accuracy:</label>
-            <span id="percent">Accuracy: Accuracy: Accuracy:Accuracy:Accuracy:</span>
+    <section id="super-result">
+        <div class="result-container">
+            <div class="result-heading"><p>Let's see how well you did.</p></div>
+            <div class="value-line">
+                <p id="phrase"></p>
+                <label class="accuracy">Accuracy:</label>
+                <span id="percent"></span>
+            </div>
+            <div id="phrase"></div>
         </div>
     </section>
 
@@ -38,11 +45,11 @@
             <div id="guessed-result">
                 <div class="value-line flex">
                     <label>Hex:</label>
-                    <span id="guessed-hex"></span>
+                    <span id="guessed-hex">#000000</span>
                 </div>
                 <div class="value-line flex">
                     <label>RGB:</label>
-                    <span id="guessed-rgb"></span>
+                    <span id="guessed-rgb">(0, 0, 0)</span>
                 </div>
             </div>
         </div>
