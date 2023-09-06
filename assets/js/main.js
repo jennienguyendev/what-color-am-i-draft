@@ -1,6 +1,6 @@
 // generate a color and store result
 let randomColor = generateColor();
-let currentColor = '';
+let currentColor = '0, 0, 0';
 
 //  display color square after dom loaded
 document.addEventListener('DOMContentLoaded', displayColor(randomColor));
@@ -20,6 +20,9 @@ newGame.addEventListener('click', clearResult);
 
 // function to hide result when play again
 function clearResult () {
+    document.getElementById('range-red').disabled = false;
+    document.getElementById('range-green').disabled = false;
+    document.getElementById('range-blue').disabled = false;
     let displayContainer = document.getElementById('random-result');
     let displayGuessed = document.getElementById('guessed-result');
     let clearGuessedRGB = document.getElementById('guessed-rgb');
@@ -40,12 +43,17 @@ function triggerDisplay () {
 
 // function to display result after submit
 function displayResult (color) {
+    document.getElementById('range-red').disabled = true;
+    document.getElementById('range-green').disabled = true;
+    document.getElementById('range-blue').disabled = true;
     let displayContainer = document.getElementById('random-result');
     let displayRandomRGB = document.getElementById('random-rgb');
     let displayRandomHex = document.getElementById('random-hex');
     displayRandomRGB.innerHTML = `(${color})`;
     displayRandomHex.innerHTML = `${rgbToHex(color).toUpperCase()}`;
     displayContainer.style.display = 'block';
+
+    calc(randomColor, currentColor);
 }
 
 // function to generate random number
@@ -69,17 +77,14 @@ function changeColor () {
     let red = document.getElementById('range-red').value;
     let green = document.getElementById('range-green').value;
     let blue = document.getElementById('range-blue').value;
-    let color = `${red}, ${green}, ${blue}`;
+    currentColor = `${red}, ${green}, ${blue}`;
     let printColor = document.getElementById('guessed-color');
-    printColor.style.background = `rgba(${color})`;
+    printColor.style.background = `rgba(${currentColor})`;
     let guessedRGB = document.getElementById('guessed-rgb');
     let guessedHex = document.getElementById('guessed-hex');
-    guessedRGB.innerHTML = `(${color})`;
-    guessedHex.innerHTML = `${rgbToHex(color).toUpperCase()}`;
+    guessedRGB.innerHTML = `(${currentColor})`;
+    guessedHex.innerHTML = `${rgbToHex(currentColor).toUpperCase()}`;
 }
-
-
-
 
 // function to convert from num to hex
 function toHex (val) {
@@ -91,4 +96,15 @@ function toHex (val) {
 function rgbToHex (color) {
     let str = color.split(', ');
     return `#${toHex(str[0])}${toHex(str[1])}${toHex(str[2])}`;
+}
+
+// function to calculate score
+function calc (random, guessed) {
+    let rResult = random.split(', ');
+    let gResult = guessed.split(', ');
+    let rDiff = Math.abs(rResult[0] - gResult[0]);
+    let gDiff = Math.abs(rResult[1] - gResult[1]);
+    let bDiff = Math.abs(rResult[2] - gResult[2]);
+    let percentage = ((255 - rDiff) / 2.55) + ((255 - gDiff) / 2.55) + ((255 - bDiff) / 2.55);
+    console.log((percentage / 3).toFixed(2));
 }
