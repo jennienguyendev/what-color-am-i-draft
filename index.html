@@ -8,6 +8,16 @@
 <body>
     <header class="center">what color am i?</header>
 
+    <!-- display result -->
+    <section class="result-container">
+        <div id="phrase"></div>
+        <div class="value-line">
+            <label>Accuracy:</label>
+            <span id="percent">Accuracy: Accuracy: Accuracy:Accuracy:Accuracy:</span>
+        </div>
+    </section>
+
+    <!-- container for squares -->
     <main class="flex">
         <!-- display random color -->
         <div id="random-color" class="flex">
@@ -38,22 +48,23 @@
         </div>
     </main>
 
-    <section class="color-container"> 
-        <div class="rgb-sliders left">
-            <div class="red">
-                <label>R:</label>
-                <input type="range" min="0" max="255" value="0" id="range-red">
-            </div>
-            <div class="green">
-                <label>G:</label>
-                <input type="range" min="0" max="255" value="0" id="range-green">
-            </div>
-            <div class="blue">
-                <label>B:</label>
-                <input type="range" min="0" max="255" value="0" id="range-blue">
-            </div>
-            <button id="submit">Check Answer</button>
-            <button id="reset">Play Again</button>
+    <!-- sliders -->
+   <section class="rgb-sliders">
+        <div class="red flex">
+            <label>R:</label>
+            <input type="range" min="0" max="255" value="0" id="range-red">
+        </div>
+        <div class="green flex">
+            <label>G:</label>
+            <input type="range" min="0" max="255" value="0" id="range-green">
+        </div>
+        <div class="blue flex">
+            <label>B:</label>
+            <input type="range" min="0" max="255" value="0" id="range-blue">
+        </div>
+        <div class="btn-container flex">
+            <span><button type="submit" id="submit">Check Answer</button></span>
+            <span><button type="reset" id="reset">Play Again</button></span>
         </div>
     </section>
     

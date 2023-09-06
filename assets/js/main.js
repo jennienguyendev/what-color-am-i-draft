@@ -20,9 +20,17 @@ newGame.addEventListener('click', clearResult);
 
 // function to hide result when play again
 function clearResult () {
-    document.getElementById('range-red').disabled = false;
-    document.getElementById('range-green').disabled = false;
-    document.getElementById('range-blue').disabled = false;
+    let rangeRed = document.getElementById('range-red');
+    let rangeGreen = document.getElementById('range-green');
+    let rangeBlue = document.getElementById('range-blue');
+    let guessedBg = document.getElementById('guessed-color');
+    rangeRed.disabled = false;
+    rangeRed.value = 0;
+    rangeGreen.value = 0;
+    rangeBlue.value = 0;
+    rangeGreen.disabled = false;
+    rangeBlue.disabled = false;
+    guessedBg.style.background = '#000';
     let displayContainer = document.getElementById('random-result');
     let displayGuessed = document.getElementById('guessed-result');
     let clearGuessedRGB = document.getElementById('guessed-rgb');
@@ -106,5 +114,5 @@ function calc (random, guessed) {
     let gDiff = Math.abs(rResult[1] - gResult[1]);
     let bDiff = Math.abs(rResult[2] - gResult[2]);
     let percentage = ((255 - rDiff) / 2.55) + ((255 - gDiff) / 2.55) + ((255 - bDiff) / 2.55);
-    console.log((percentage / 3).toFixed(2));
+    return (percentage / 3).toFixed(2);
 }
