@@ -1,100 +1,92 @@
 /* resets */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+/* presets */
+    .left {
+        text-align: left;
+    }
+    .center {
+        text-align: center;
+    }
+    .right {
+        text-align: right;
+    }
+    .flex {
+        display: flex;
+    }
+    .full-width {
+        width: 100%;
+    }
+    .full-height {
+        height: 100%;
+    }
 
 /* set 1rem = 10px */
-html {
-    font-size: 62.5%;
-    width: 100vw;
-    height: 100vh;
-}
+    html {
+        font-size: 62.5%;
+        width: 100vw;
+        height: 100vh;
+    }
+
+/* CUSTOM PROPERTIES */
+    :root {
+        --clr-light: #fff;
+        --clr-dark: #000;
+        --fs-h1: 5rem;
+        --fs-body: 2rem;
+    }
 
 /* set max width = 1000px*/
-body {
-    max-width: 1000px;
-    margin: 0 auto;
-}
+    body {
+        max-width: 1000px;
+        margin: 0 auto;
+        color: var(--clr-dark);
+    }
 
-.left {
-    text-align: left;
-}
-.center {
-    text-align: center;
-}
-.right {
-    text-align: right;
-}
-/* flex all super containers */
-main,
-.color-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 2rem;
-    background: lightgray; /* delete */
-}
+/* ---- HEADER ---- */
+    header {
+        margin: 3rem auto;
+        font-size: var(--fs-h1);
+    }
 
-/* styles for result texts */
+/* ---- MAIN ---- */
+    main {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--fs-body);
+        background: lightgray;
+    }
 
-/* set size for color squares */
-main > div {
-    content: '';
-    width: 30rem;
-    height: 30rem;
-    border: 2px solid green; /* delete */
-}
+    /* default size for color square divs */
+    main > div {
+        width: 30rem;
+        height: 30rem;
+        align-items: center;
+        border: 2px solid purple; /* delete */
+    }
+    /* container for hex and rgb vals */
+    #random-result,
+    #guessed-result {
+        width: 80%;
+        margin: auto;
+        background: rgba(255, 255, 255, .75);
+        border-radius: 2rem;
+    }
+    /* label and color value */
+    .value-line {
+        font-size: var(--fs-body);
+        padding: var(--fs-body);
+    }
+    /* add padding betwen label and val */
+    .value-line label {
+        padding-right: var(--fs-body);
+    }
 
-/* set size for color value display containers*/
-.color-container > div {
-    font-size: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 30rem;
-    max-width: 30rem;
-    padding: 1rem;
-}
-
-.color-container > .rgb-sliders > div,
-.color-container > div input {
-    gap: .5rem;
-    width: 100%;
-}
-
-.color-container .random-result {
-    display: flex;
-}
-
-.color-container .random-result div {
-    width: 100%;
-}
-
-#random-rgb,
-#random-hex {
-    display: hidden;
-}
-
-.random-result {
-    text-align: right;
-}
-.red,
-.green,
-.blue {
-    display: flex;
-    padding: 1rem;
-}
-button {
-    margin: 2rem auto;
-    padding: 1rem;
-}
-
-.random-result > div > div {
-    line-height: 4.2rem;
-}
-
-.random-result {
-    display: none;
-}
+    /* guesses */
+    #guessed-color {
+        background: #000;
+    }

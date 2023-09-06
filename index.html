@@ -6,43 +6,54 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <header>what color am i?</header>
-    <main>
-        <!-- Random color -->
-        <div id="random-color"></div>
-        <!-- Guess -->
-        <div id="guessed-color"></div>
-    </main>
+    <header class="center">what color am i?</header>
 
-    <section class="color-container">
-
-        <div class="random-result">
-            <div>
-                <div>
+    <main class="flex">
+        <!-- display random color -->
+        <div id="random-color" class="flex">
+            <div id="random-result" hidden>
+                <div class="value-line flex">
                     <label>Hex:</label>
                     <span id="random-hex"></span>
                 </div>
-                <div>
+                <div class="value-line flex">
                     <label>RGB:</label>
                     <span id="random-rgb"></span>
                 </div>
             </div>
         </div>
-        
+
+        <!-- display guessed color -->
+         <div id="guessed-color" class="flex">
+            <div id="guessed-result">
+                <div class="value-line flex">
+                    <label>Hex:</label>
+                    <span id="guessed-hex"></span>
+                </div>
+                <div class="value-line flex">
+                    <label>RGB:</label>
+                    <span id="guessed-rgb"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="color-container"> 
         <div class="rgb-sliders left">
             <div class="red">
                 <label>R:</label>
-                <input type="range" min="0" max="255" class="range-red">
+                <input type="range" min="0" max="255" value="0" id="range-red">
             </div>
             <div class="green">
                 <label>G:</label>
-                <input type="range" min="0" max="255" class="range-green">
+                <input type="range" min="0" max="255" value="0" id="range-green">
             </div>
             <div class="blue">
                 <label>B:</label>
-                <input type="range" min="0" max="255" class="range-blue">
+                <input type="range" min="0" max="255" value="0" id="range-blue">
             </div>
-            <button id="submit">Confirm</button>
+            <button id="submit">Check Answer</button>
+            <button id="reset">Play Again</button>
         </div>
     </section>
     
