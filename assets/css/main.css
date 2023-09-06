@@ -94,3 +94,7 @@ button {
 .random-result > div > div {
     line-height: 4.2rem;
 }
+
+.random-result {
+    display: none;
+}
