@@ -45,7 +45,7 @@
         --fs-h2: 4rem;
         --fs-h3: 3rem;
         --fs-body: 2rem;
-        --fs-copyright: 1.5rem;
+        --fs-copyright: 2.5rem;
         --fs-default: 1rem;
     }
 
@@ -178,7 +178,7 @@
 
 /* FOOTER */
     footer {
-        font-size: var(--fs-body);
+        font-size: var(--fs-copyright);
         right: 0;
         bottom: 0;
     }
