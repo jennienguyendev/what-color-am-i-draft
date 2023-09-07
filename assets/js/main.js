@@ -139,14 +139,23 @@ function printPercent (percent) {
     printPercentResult.innerHTML = `${percent}%`;
 }
 
-// < 90
-let losePhrases = [
+// < 79.99
+let badPhrases = [
     `You didn't fail. You just found a creative way to get a really low score.`,
     `You've set a new record for low scores. It's like you won the Olympic gold in failing.`,
-    `Why did you take a detour to the Land of Failure?`,
     `I'm impressed. That was an epic fail.`,
+    `This is madness. Totally madness.`,
+    `Why did you take a detour to the Land of Failure?`,
+    
+];
+// 80 - 90
+let losePhrases = [
     `I didn't expect this from you...`,
     `How did you come up with this answer?`,
+    `You 'oops'-ed again...`,
+    `Wow! You fumbled fabulously!`,
+    `And the crowd goes "uh-oh!"`,
+    `Nailed it! On second thought... not really.`,
 ];
 // 90 - 94.99 
 let winPhrases = [
@@ -185,13 +194,16 @@ function checkScore (score) {
     if (score === 100) {
         return pickAPhrase(perfectPhrases);
     }
-    else if (score > 95) {
+    else if (score >= 95) {
         return pickAPhrase(betterPhrases);
     }
-    else if (score > 90) {
+    else if (score >= 90) {
         return pickAPhrase(winPhrases);
     }
-    return pickAPhrase(losePhrases);
+    else if (score >= 80) {
+        return pickAPhrase(losePhrases);
+    }
+    return pickAPhrase(badPhrases);
 }
 
 // function to choose font color for percent
