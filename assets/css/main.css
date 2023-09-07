@@ -200,7 +200,13 @@
     }
  }
 
-@media screen and (max-width: 550px) {
+@media (min-width: 543px) and (max-width: 590px) {
+    :root {
+        --fs-h1: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 542px) {
     html {
         font-size: 52%;
     }
