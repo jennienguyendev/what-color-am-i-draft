@@ -152,10 +152,12 @@ let badPhrases = [
 let losePhrases = [
     `I didn't expect this from you...`,
     `How did you come up with this answer?`,
-    `You 'oops'-ed again...`,
+    `You "oops"-ed again...`,
     `Wow! You fumbled fabulously!`,
     `And the crowd goes "uh-oh!"`,
     `Nailed it! On second thought... not really.`,
+    `It could've gone better...`,
+    `There's room for improvement here.`,
 ];
 // 90 - 94.99 
 let winPhrases = [
