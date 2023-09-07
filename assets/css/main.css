@@ -178,7 +178,7 @@
 
 /* FOOTER */
     footer {
-        font-size: var(--fs-copyright);
+        font-size: var(--fs-body);
         right: 0;
         bottom: 0;
     }
