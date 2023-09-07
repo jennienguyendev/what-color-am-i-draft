@@ -75,6 +75,7 @@
     width: 80%;
     margin: var(--fs-body) auto;
 }
+
 .result-container {
     text-align: left;
 }
@@ -173,3 +174,44 @@
 	.button:active {
 		background-color: rgba(144, 144, 144, 0.2);
 	}
+
+/* MEDIA QUERIES */
+ 
+ @media (min-width: 650px) and (max-width: 799px) {
+    main > div {
+        width: 25rem;
+    }
+ }
+
+@media screen and (max-width: 550px) {
+    html {
+        font-size: 52%;
+    }
+    :root {
+        --fs-h1: 4rem;
+        --fs-h2: 3.5rem;
+        --fs-h3: 3rem;
+    }
+    body {
+        width: 95vw;
+    }
+    main > div {
+        height: 24rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 42%;
+    }
+    :root {
+        --fs-h1: 3.5rem;
+    }
+    body {
+        width: 98vw;
+    }
+    main > div {
+        height: 20rem;
+    }
+}
+
