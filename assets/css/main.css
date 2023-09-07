@@ -45,6 +45,7 @@
         --fs-h2: 4rem;
         --fs-h3: 3rem;
         --fs-body: 2rem;
+        --fs-copyright: 1.5rem;
         --fs-default: 1rem;
     }
 
@@ -174,6 +175,22 @@
 	.button:active {
 		background-color: rgba(144, 144, 144, 0.2);
 	}
+
+/* FOOTER */
+    footer {
+        font-size: var(--fs-copyright);
+        right: 0;
+        bottom: 0;
+    }
+
+    a,
+    a:visited {
+        color: var(--clr-passed);
+        text-decoration: none;
+    }
+    a:hover {
+        color: var(--clr-failed)
+    }
 
 /* MEDIA QUERIES */
  
