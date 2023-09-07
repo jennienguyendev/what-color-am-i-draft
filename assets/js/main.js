@@ -179,7 +179,7 @@ let betterPhrases = [
 ];
 // 100
 let perfectPhrases = [
-    `Okay... Did you cheat?`,
+    `Alright... Did you cheat?`,
 ];
 
 // function to choose a random phrase
