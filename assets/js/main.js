@@ -290,7 +290,7 @@ async function yesRequest() {
 // request for 50 no results
 async function noRequest() {
     try {
-        const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=H9AAVynLMVd1sQ7ZR5FrUrDkJI0DY8P1&q=no&limit=${numOfResults}&offset=${randomOffset}&rating=g&lang=en&bundle=low_bandwidth`);
+        const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=H9AAVynLMVd1sQ7ZR5FrUrDkJI0DY8P1&q=disappointed&limit=${numOfResults}&offset=${randomOffset}&rating=g&lang=en&bundle=low_bandwidth`);
         const data = await res.json();            
         // loop through json and store urls in no arr
         for (let i = 0; i < numOfResults; i++) {
