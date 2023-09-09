@@ -2,8 +2,30 @@
 let randomColor = generateColor();
 let currentColor = '0, 0, 0';
 
+// arrays for giphy img urls
+let yes = [];
+let no = [];
+
+// default yes and no giphy img
+
+const defaultYes = `https://media2.giphy.com/media/xuXzcHMkuwvf2/200w_d.gif?cid=fa20028a4h7vvtxfwlflew3s0s3fxftnu01gtsxxrt76tmla&ep=v1_gifs_search&rid=200w_d.gif&ct=g`;
+
+const defaultNo = `https://media2.giphy.com/media/pq2pU6B2Ht3pu/200w_d.gif?cid=fa20028a4h7vvtxfwlflew3s0s3fxftnu01gtsxxrt76tmla&ep=v1_gifs_search&rid=200w_d.gif&ct=g`;
+
+//  generate random offset number to get new results every time
+let randomOffset = Math.floor(Math.random() * 800);
+
+// get 50 results every time (max allowed by giphy)
+const numOfResults = 50;
+
 //  display color square after dom loaded
 document.addEventListener('DOMContentLoaded', displayColor(randomColor));
+
+// fetch imgs from giphy api
+document.addEventListener('DOMContentLoaded', yesRequest());
+document.addEventListener('DOMContentLoaded', noRequest());
+
+
 
 // add eventListener to sliders
 document.getElementById('range-red').addEventListener('input', changeColor);
@@ -46,6 +68,8 @@ function clearResult () {
     displayGuessed.style.display = 'block';
     let hideScores = document.getElementById('super-result');
     hideScores.style.visibility = 'hidden';
+    document.getElementById('result-heading').style.display = 'none';
+    document.getElementById('result-content').style.display = 'none';
 }
 
 // function used to call displayResult
@@ -64,10 +88,14 @@ function displayResult (color) {
     let displayRandomHex = document.getElementById('random-hex');
     displayRandomRGB.innerHTML = `(${color})`;
     displayRandomHex.innerHTML = `${rgbToHex(color).toUpperCase()}`;
+    // display giphy img container
+    document.getElementById('giphy-container').style.display = 'flex';
     displayContainer.style.display = 'block';
     let hideScores = document.getElementById('super-result');
     hideScores.style.visibility = 'visible';
     let score = calc(randomColor, currentColor);
+    // pass score in to display a yes or no img
+    displayGiphy(Number(score));
     let printPhrase = document.getElementById('phrase');
     let phraseResult = checkScore(Number(score));
     printPhrase.innerHTML = phraseResult;
@@ -219,4 +247,58 @@ function percentColor (score) {
         chosenColor = `--clr-passed`;
     }
     percentField.style.color = `var(${chosenColor})`;
+}
+
+// function to display a giphy img
+function displayGiphy (score) {
+    // generate a random num between 0 and 49
+    let imgNum = Math.floor(Math.random() * 50);
+    let giphyImg = document.getElementById('giphy-img');
+
+
+    document.getElementById('result-heading').style.display = 'block';
+    document.getElementById('result-content').style.display = 'block';
+    if (score < 90) {
+        giphyImg.src = no[imgNum] || defaultNo;
+    }
+    else {
+        giphyImg.src = yes[imgNum] || defaultYes;
+    }
+}
+
+// function to hide broken img
+function hideImg () {
+    document.getElementById('giphy-container').style.display = 'none';
+}
+
+// ---- fetch img from giphy api ---- //
+
+// request for 50 yes results
+async function yesRequest() {
+    try {
+        const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=H9AAVynLMVd1sQ7ZR5FrUrDkJI0DY8P1&q=yes&limit=${numOfResults}&offset=${randomOffset}&rating=g&lang=en&bundle=low_bandwidth`);
+        const data = await res.json();
+        // loop through json and store urls in yes arr
+        for (let i = 0; i < numOfResults; i++) {
+            yes[i] = data.data[i].images.fixed_width_downsampled.url;
+      }
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+// request for 50 no results
+async function noRequest() {
+    try {
+        const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=H9AAVynLMVd1sQ7ZR5FrUrDkJI0DY8P1&q=no&limit=${numOfResults}&offset=${randomOffset}&rating=g&lang=en&bundle=low_bandwidth`);
+        const data = await res.json();            
+        // loop through json and store urls in no arr
+        for (let i = 0; i < numOfResults; i++) {
+            no[i] = data.data[i].images.fixed_width_downsampled.url;
+        }
+    }
+    catch(error) {
+        console.log(error);
+    }
+
 }

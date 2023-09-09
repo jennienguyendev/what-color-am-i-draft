@@ -66,21 +66,33 @@
     </section>
     
     <!-- display result -->
-    <section id="super-result">
-        <div class="result-container">
-            <div class="result-heading"><p>Let's see how well you did.</p></div>
-            <div class="value-line">
-                <label class="accuracy">Accuracy:</label>
-                <span id="percent"></span>
-                <p id="phrase"></p>
+    <section id="super-result" class="flex">
+        <div id="result-heading"><p>Let's see how well you did.</p></div>
+        <div id="result-content">
+            <div class="result-sub flex">
+                <div id="giphy-container" class="flex">
+                    <img src="" id="giphy-img" onerror="hideImg()">
+                </div>
+                <div id="result-container" class="flex">
+                    <div class="value-line">
+                        <label class="accuracy">Accuracy:</label>
+                        <span id="percent"></span>
+                        <p id="phrase"></p>
+                    </div>
+                    <div id="phrase"></div>
+                </div>
             </div>
-            <div id="phrase"></div>
         </div>
     </section>
 
-    <footer class="right">
-        <span><a href="https://www.linkedin.com/in/jennienguyendev/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></span>
-        <span><a href="https://github.com/jennienguyendev" target="_blank"><i class="fa-brands fa-github"></i></a></span>
+    <footer class="right flex">
+        <div>
+            <span class="giphy"><img src="assets/images/giphy.png"></span>
+        </div>
+        <div>
+            <span><a href="https://www.linkedin.com/in/jennienguyendev/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></span>
+            <span><a href="https://github.com/jennienguyendev" target="_blank"><i class="fa-brands fa-github"></i></a></span>
+        </div>
     </footer class="right">
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
