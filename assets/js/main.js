@@ -70,6 +70,7 @@ function clearResult () {
     hideScores.style.visibility = 'hidden';
     document.getElementById('result-heading').style.display = 'none';
     document.getElementById('result-content').style.display = 'none';
+    document.getElementById('giphy-img').src = '';
 }
 
 // function used to call displayResult
