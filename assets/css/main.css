@@ -80,6 +80,9 @@
         margin: var(--fs-body) auto;
         gap: 2rem;
     }
+    #result-content {
+        display: none;
+    }
 
     .result-sub {
         flex-wrap: nowrap;

@@ -268,7 +268,7 @@ function displayGiphy (score) {
 }
 
 // function to hide broken img
-function hideImg () {
+function hideImg() {
     document.getElementById('giphy-container').style.display = 'none';
 }
 
