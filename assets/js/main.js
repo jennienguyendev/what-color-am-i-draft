@@ -277,7 +277,7 @@ function hideImg() {
 // request for 50 yes results
 async function yesRequest() {
     try {
-        const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=H9AAVynLMVd1sQ7ZR5FrUrDkJI0DY8P1&q=happy&limit=${numOfResults}&offset=${randomOffset}&rating=g&lang=en&bundle=low_bandwidth`);
+        const res = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=H9AAVynLMVd1sQ7ZR5FrUrDkJI0DY8P1&q=amazed&limit=${numOfResults}&offset=${randomOffset}&rating=g&lang=en&bundle=low_bandwidth`);
         const data = await res.json();
         // loop through json and store urls in yes arr
         for (let i = 0; i < numOfResults; i++) {

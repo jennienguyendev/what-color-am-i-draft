@@ -209,6 +209,7 @@
 /* FOOTER */
     footer {
         justify-content: space-between;
+        align-items: flex-end;
         font-size: var(--fs-copyright);
         right: 0;
         bottom: 0;
