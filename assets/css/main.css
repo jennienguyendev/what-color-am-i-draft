@@ -52,6 +52,7 @@
 /* set max width = 1000px*/
     body {
         width: 80vw;
+	height: 100vh;
         max-width: 1000px;
         margin: 0 auto;
         color: var(--clr-darkest);
@@ -211,7 +212,7 @@
         justify-content: space-between;
         align-items: flex-end;
         font-size: var(--fs-copyright);
-        right: 0;
+        right: var(--fs-default);
         bottom: 0;
     }
 
